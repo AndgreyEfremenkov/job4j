@@ -8,7 +8,8 @@ public class SqArea {
         System.out.println("Н="+ h);
         double l= h*k;
         System.out.println("L="+ l);
-        return l*h ;
+        double s=l*h ;
+        return s;
     }
     public static void main(String[] args){
         double result1= square(24,3);
