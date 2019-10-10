@@ -22,5 +22,4 @@ public class CounterTest {
         int result = check.add(10,20);
         assertThat(result,is(90));
     }
-
 }
