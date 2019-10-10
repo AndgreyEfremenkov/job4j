@@ -17,7 +17,7 @@ public class CounterTest {
     }
 
     @Test
-    public void whenSumEvenNumbersFromTenToTwentyThen() {
+    public void whenSumEvenNumbersFromTenToTwentyThenNinety() {
         Counter check =new Counter();
         int result = check.add(10,20);
         assertThat(result,is(90));
