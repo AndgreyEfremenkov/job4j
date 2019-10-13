@@ -35,6 +35,13 @@ public class PrimeNumberTest {
     }
 
     @Test
+    public void when9() {
+        PrimeNumber prime = new PrimeNumber();
+        int count = prime.calc(9);
+        assertThat(count, is(4));
+    }
+
+    @Test
     public void when1() {
         PrimeNumber prime = new PrimeNumber();
         int count = prime.calc(2);
