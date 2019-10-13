@@ -11,6 +11,7 @@ public class PrimeNumber {
                     break;
                 }
              if (flag==true) count++;
+
             flag = true;
         }
 
