@@ -35,4 +35,14 @@ public class FindLoopTest {
         int expect= 1;
         assertThat(result,is(expect));
     }
+
+    @Test
+    public void whenArrayHas4ThenMinus1(){
+        FindLoop find=new FindLoop();
+        int[] input=new int[]{5,17,3,23,57};
+        int value= 4;
+        int result= find.indexOf(input, value);
+        int expect= -1;
+        assertThat(result,is(expect));
+    }
 }
