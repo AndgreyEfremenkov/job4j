@@ -22,7 +22,7 @@ public class MatrixCheckTest {
     }
 
     @Test
-    public void whenDataMonoAAAAByTrueThenTrue() {
+    public void whenDataMonoAByTrueThenTrue() {
         char[][] input = {
                 {' ', ' ', ' ', ' ', ' '},
                 {'X', 'X', 'X', 'X', 'X'},

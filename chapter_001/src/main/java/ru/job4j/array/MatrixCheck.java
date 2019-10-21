@@ -9,14 +9,18 @@ public class MatrixCheck {
                 char sign = board[row][cell];
                 if (sign == 'X' && row==0) {
                     for (int i=0 ;i<board.length;i++){
-                        if (board[i][cell]==sign)flag++;
-                        if (flag==5) return result=true;
+                        if (board[i][cell]==sign)
+                            flag++;
+                        if (flag==board.length)
+                            return result=true;
                     }
 
                 } else if (sign == 'X' && cell==0){
                     for (int i=0 ;i<board.length;i++){
-                        if (board[row][i]==sign)flag++;
-                        if (flag==5) return result=true;
+                        if (board[row][i]==sign)
+                            flag++;
+                        if (flag==board.length)
+                            return result=true;
                     }
                 }
             }
