@@ -22,16 +22,16 @@ public class MortgageTest {
     }
 
     @Test
-    public void amount100Salary120Percent50Year2(){
+    public void amount100Salary120Percent50Year2() {
         Mortgage mortgage = new Mortgage();
-        int year = mortgage.year(100,120,50);
+        int year = mortgage.year(100, 120, 50);
         assertThat(year, is(2));
     }
 
     @Test
-    public void amount100Salary70Percent50Year4(){
+    public void amount100Salary70Percent50Year4() {
         Mortgage mortgage = new Mortgage();
-        int year = mortgage.year(100,70,50);
+        int year = mortgage.year(100, 70, 50);
         assertThat(year, is(4));
     }
 }

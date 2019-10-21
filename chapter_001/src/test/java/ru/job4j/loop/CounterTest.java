@@ -8,16 +8,16 @@ public class CounterTest {
 
     @Test
     public void whenSumEvenNumbersFromOneToTenThenThirty() {
-        Counter check =new Counter();
-        int result = check.add(1,10);
-        assertThat(result,is(30));
+        Counter check = new Counter();
+        int result = check.add(1, 10);
+        assertThat(result, is(30));
     }
 
     @Test
     public void whenSumEvenNumbersFromTenToTwentyThenNinety() {
-        Counter check =new Counter();
-        int result = check.add(10,20);
-        assertThat(result,is(90));
+        Counter check = new Counter();
+        int result = check.add(10, 20);
+        assertThat(result, is(90));
     }
 
 }

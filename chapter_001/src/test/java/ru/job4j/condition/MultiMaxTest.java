@@ -7,10 +7,10 @@ import static org.junit.Assert.assertThat;
 public class MultiMaxTest {
 
     @Test
-    public void whenFirstMax(){
-        MultiMax check =new MultiMax();
-        int result = check.max(5,1,2);
-        assertThat(result,is(5));
+    public void whenFirstMax() {
+        MultiMax check = new MultiMax();
+        int result = check.max(5, 1, 2);
+        assertThat(result, is(5));
     }
 
     @Test
