@@ -66,14 +66,4 @@ public class FindLoopTest {
         assertThat(result, is(expect));
     }
 
-    @Test
-    public void whenFinishGreaterArray() {
-        int[] input = new int[]{5, 2, 10, 2, 4};
-        int value = 2;
-        int start = 2;
-        int finish = 8;
-        int result = FindLoop.indexOf(input, value, start, finish);
-        int expect = -1;
-        assertThat(result, is(expect));
-    }
 }
