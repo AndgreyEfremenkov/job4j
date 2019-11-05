@@ -5,7 +5,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SortSelectedTest {
-
     @Test
     public void whenSort7() {
         int[] input = new int[] {2, 7, 94, 23, 3, 11, 0};
