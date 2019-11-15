@@ -7,19 +7,13 @@ public class Max {
         return result;
     }
     public static int max(int first, int second, int third) {
-        boolean condition = first > second;
-        int temp = condition ? first : second;
-        condition = temp > third;
-        int result = condition ? temp : third;
+        boolean condition = max(first, second) > third;
+        int result = condition ? max(first, second) : third;
         return result;
     }
     public static int max(int first, int second, int third, int fourth) {
-        boolean condition = first > second;
-        int temp = condition ? first : second;
-        condition = third > fourth;
-        int temp2 = condition ? third : fourth;
-        condition = temp > temp2;
-        int result = condition ? temp : temp2;
+        boolean condition = max(first, second, third) > fourth;
+        int result = condition ? max(first, second, third) : fourth;
         return result;
     }
 
