@@ -8,8 +8,6 @@ public class Item {
     public long create;
 
     public Item() {
-        super();
-        System.out.println("load item");
     }
 
     public Item(String name, String description, long create) {
@@ -31,7 +29,7 @@ public class Item {
     }
 
     public static void main(String[] args) {
-        Bug bug = new Bug();
+        Item item = new Item();
     }
 }
 
