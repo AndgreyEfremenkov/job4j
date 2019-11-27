@@ -1,6 +1,9 @@
 package ru.job4j.models;
 
 public class Item {
+
+    private String id;
+
     public String name;
 
     public String description;
@@ -16,6 +19,11 @@ public class Item {
         this.create = create;
     }
 
+    public String getId() { return this.id;}
+
+    public  void setId(String id) {
+        this.id = id;
+    }
     public String getName() {
         return this.name;
     }
