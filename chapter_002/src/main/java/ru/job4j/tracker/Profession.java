@@ -9,6 +9,8 @@ public class Profession {
 
     int birthday;
 
+    int salary;
+
     public String getName() {
         return this.name;
     }
