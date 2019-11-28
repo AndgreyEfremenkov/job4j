@@ -4,11 +4,11 @@ public class Item {
 
     private String id;
 
-    public String name;
+    private String name;
 
-    public String description;
+    private String description;
 
-    public long create;
+    private long create;
 
     public Item() {
     }
