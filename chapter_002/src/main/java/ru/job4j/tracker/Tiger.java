@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import ru.job4j.models.Task;
-
 public class Tiger extends Predator {
 
     public Tiger() {
