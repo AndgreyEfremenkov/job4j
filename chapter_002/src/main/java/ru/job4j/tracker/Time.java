@@ -5,7 +5,7 @@ public class Time {
 
     int date;
 
-    public void run(){
+    public void run() {
 
     }
 }

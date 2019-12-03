@@ -4,7 +4,7 @@ public class Dentist extends Doctor {
 
     int teeth;
 
-    public void drill(){
+    public void drill() {
 
     }
 }

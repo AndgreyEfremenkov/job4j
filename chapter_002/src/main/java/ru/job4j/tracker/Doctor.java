@@ -9,6 +9,6 @@ public class Doctor extends Profession {
     public Diagnose heal(Pacient pacient) {
         Diagnose fat = new Diagnose("fat");
 
-    return fat ;
+    return fat;
     }
 }
