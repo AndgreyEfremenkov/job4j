@@ -5,8 +5,9 @@ public class Shop {
         products[index] = null;
         for (int i = index; (i + 1) < products.length; i++) {
                 products[i] = products[i + 1];
-                products[i + 1] = null;
-        } return products;
+        }
+        products[products.length - 1] = null;
+        return products;
     }
 
     public static void main(String[] args) {
