@@ -54,14 +54,14 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean result = false;
-
         for (int i = 0; i<items.length; i++) {
 
             if (items[i] != null && items[i].getId().equals(id)) {
              System.arraycopy(items, i, items, i-1, items.length-1);
+             result = true;
             }
         }
-        return false;
+        return result;
     }
 
     /**
