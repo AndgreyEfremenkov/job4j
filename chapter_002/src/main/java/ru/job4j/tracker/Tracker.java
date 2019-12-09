@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
@@ -21,6 +22,7 @@ public class Tracker {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
+
     }
 
     /**
@@ -33,45 +35,82 @@ public class Tracker {
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
+    /**
+     *
+     * @param id идентификатор по которому нужно найти ячейку
+     * @param item заявка на которую нужно заменить
+     * @return булевоое значение о том что все сработало
+     */
     public boolean replace(String id, Item item) {
-        /* должен заменить ячейку в массиве this.items.
-         Для этого необходимо найти ячейку в массиве по id.
-          Метод должен вернуть boolean результат - удалось ли провести операцию.
-         */
-        return false;
+        boolean replace = false;
+        for (int i = 0; i<position; i++) {
+            if (items[i].getId().equals(id)) {
+                this.items[i] = item;
+                replace = true;
+            }
+        }
+        return replace;
     }
 
     public boolean delete(String id) {
-        /*
-        должен удалить ячейку в массиве this.items. Для этого необходимо найти ячейку в массиве по id.
-          Далее сместить все значения справа от удаляемого элемента - на одну ячейку влево
-          с помощью System.arraycopy(). Метод должен вернуть boolean результат - удалось ли провести операцию.
-         */
+        boolean result = false;
+
+        for (int i = 0; i<items.length; i++) {
+
+            if (items[i] != null && items[i].getId().equals(id)) {
+             System.arraycopy(items, i, items, i-1, items.length-1);
+            }
+        }
         return false;
     }
 
+    /**
+     * Метод возвращает копию массива this.items без null элементов;
+     * @return массив без null эллеменов
+     */
     public Item[] findAll() {
-       /*
-        возвращает копию массива this.items без null элементов;
-        */
-        return this.items;
+        Item[] temp = new Item[position];
+        int count = 0;
+        for (int i = 0; i<items.length; i++) {
+            if (items[i] != null) {
+                temp[count] = items[i];
+                count++;
+            }
+        }
+        Item[] result =Arrays.copyOf(temp,count);
+        return result;
     }
+
+    /**
+     * Метод проверяет в цикле все элементы массива this.items, сравнивая name с аргументом метода  key.
+     * @param key имя заявки с которым сравниваем name
+     * @return Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его
+     */
     public Item[] findByName(String key) {
-        /*
-        проверяет в цикле все элементы массива this.items, сравнивая name
-        (используя метод getName класса Item) с аргументом метода String key.
-        Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его;
-         */
-        return this.items;
+        Item[] temp = new Item[position];
+        int count = 0;
+        for (int index = 0; index < temp.length; index++) {
+            if (this.items[index].getName().equals(key)) {
+                temp[count] = items[index];
+                count++;
+            }
+        }
+        Item[] result = Arrays.copyOf(temp,count);
+        return result;
     }
 
+    /**
+     * Метод ищет item по id если не находит возвращает null
+     * @param id
+     * @return Item найденый по id
+     */
     public Item findById(String id) {
-        /*проверяет в цикле все элементы массива this.items,
-        сравнивая id с аргументом String id и возвращает найденный Item.
-         Если Item не найден - возвращает null.
-
-         */
-        return this.items[0];
+        for (int index = 0; index <position; index++) {
+            if (this.items[index].getId().equals(id)) {
+            return items[index];
+            }
+        }
+        return null;
     }
 
 
