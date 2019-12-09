@@ -46,6 +46,7 @@ public class Tracker {
         for (int i = 0; i<position; i++) {
             if (items[i].getId().equals(id)) {
                 this.items[i] = item;
+                item.setId(id);
                 replace = true;
             }
         }
@@ -69,16 +70,7 @@ public class Tracker {
      * @return массив без null эллеменов
      */
     public Item[] findAll() {
-        Item[] temp = new Item[position];
-        int count = 0;
-        for (int i = 0; i<items.length; i++) {
-            if (items[i] != null) {
-                temp[count] = items[i];
-                count++;
-            }
-        }
-        Item[] result =Arrays.copyOf(temp,count);
-        return result;
+        return Arrays.copyOf(items, position);
     }
 
     /**
