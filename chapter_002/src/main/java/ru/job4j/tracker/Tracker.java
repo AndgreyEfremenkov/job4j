@@ -70,6 +70,7 @@ public class Tracker {
      * @return массив без null эллеменов
      */
     public Item[] findAll() {
+
         return Arrays.copyOf(items, position);
     }
 
