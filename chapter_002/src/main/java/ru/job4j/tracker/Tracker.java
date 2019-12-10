@@ -55,11 +55,11 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean result = false;
-        for (int i = 0; i<items.length; i++) {
-
+        for (int i = 0; i<position; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
-             System.arraycopy(items, i, items, i-1, items.length-1);
+             System.arraycopy(items, i+1, items, i, position--);
              result = true;
+             break;
             }
         }
         return result;
@@ -70,7 +70,6 @@ public class Tracker {
      * @return массив без null эллеменов
      */
     public Item[] findAll() {
-
         return Arrays.copyOf(items, position);
     }
 
@@ -82,7 +81,7 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] temp = new Item[position];
         int count = 0;
-        for (int index = 0; index < temp.length; index++) {
+        for (int index = 0; index < position; index++) {
             if (this.items[index].getName().equals(key)) {
                 temp[count] = items[index];
                 count++;
