@@ -35,6 +35,16 @@ public class Tracker {
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
     /**
      *
      * @param id идентификатор по которому нужно найти ячейку
@@ -43,12 +53,10 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean replace = false;
-        for (int i = 0; i<position; i++) {
-            if (items[i].getId().equals(id)) {
-                this.items[i] = item;
-                item.setId(id);
-                replace = true;
-            }
+        this.items[indexOf(id)] = item;
+        item.setId(id);
+        if (this.items[indexOf(id)].getId() == item.getId()) {
+            replace = true;
         }
         return replace;
     }
@@ -102,12 +110,7 @@ public class Tracker {
      * @return Item найденый по id
      */
     public Item findById(String id) {
-        for (int index = 0; index <position; index++) {
-            if (this.items[index].getId().equals(id)) {
-            return items[index];
-            }
-        }
-        return null;
+        return items[indexOf(id)];
     }
 
 
