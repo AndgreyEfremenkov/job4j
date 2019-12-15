@@ -53,6 +53,11 @@ public class Tracker {
         return replace;
     }
 
+    /**
+     * Метод удаляет ячейку масива и сдвигает все эллементы
+     * @param id ID ячейки которую надо удалить
+     * @return
+     */
     public boolean delete(String id) {
         boolean result = false;
         for (int i = 0; i<position; i++) {
