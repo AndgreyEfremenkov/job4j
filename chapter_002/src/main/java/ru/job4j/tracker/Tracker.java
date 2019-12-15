@@ -36,7 +36,7 @@ public class Tracker {
     }
 
     private int indexOf(String id) {
-        int rsl = 0;
+        int rsl = -1;
         for (int index = 0; index < position; index++) {
             if (items[index].getId().equals(id)) {
                 rsl = index;
@@ -53,9 +53,9 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean replace = false;
-        this.items[indexOf(id)] = item;
-        item.setId(id);
-        if (this.items[indexOf(id)].getId() == item.getId()) {
+        if (indexOf(id) >= 0 && this.items[indexOf(id)].getId().equals(id)) {
+            this.items[indexOf(id)] = item;
+            item.setId(id);
             replace = true;
         }
         return replace;
@@ -68,13 +68,13 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
-        int start = indexOf(id) + 1;
-        int distPos = indexOf(id);
-        int size = position - indexOf(id);
-        System.arraycopy(items, start, items, distPos, size);
-        items[position] = null;
-        position--;
-        if (position == size) {
+        if (indexOf(id) >= 0 && this.items[indexOf(id)].getId().equals(id)) {
+            int start = indexOf(id) + 1;
+            int distPos = indexOf(id);
+            int size = position - indexOf(id);
+            System.arraycopy(items, start, items, distPos, size);
+            items[position] = null;
+            position--;
             result = true;
         }
         return result;
@@ -112,7 +112,11 @@ public class Tracker {
      * @return Item найденый по id
      */
     public Item findById(String id) {
-        return items[indexOf(id)];
+        if (indexOf(id) >= 0) {
+            return items[indexOf(id)];
+        } else {
+            return null;
+        }
     }
 
 
