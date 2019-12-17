@@ -53,8 +53,9 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean replace = false;
-        if (this.items[indexOf(id)].getId().equals(id)) {
-            this.items[indexOf(id)] = item;
+        int index = indexOf(id);
+        if (this.items[index].getId().equals(id)) {
+            this.items[index] = item;
             item.setId(id);
             replace = true;
         }
@@ -68,10 +69,11 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
-        if (this.items[indexOf(id)].getId().equals(id)) {
-            int start = indexOf(id) + 1;
-            int distPos = indexOf(id);
-            int size = position - indexOf(id);
+         int index = indexOf(id);
+        if (this.items[index].getId().equals(id)) {
+            int start = index + 1;
+            int distPos = index;
+            int size = position - index;
             System.arraycopy(items, start, items, distPos, size);
             items[position] = null;
             position--;
