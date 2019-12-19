@@ -22,7 +22,6 @@ public class Tracker {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
-
     }
 
     /**
@@ -45,8 +44,8 @@ public class Tracker {
         }
         return rsl;
     }
+
     /**
-     *
      * @param id идентификатор по которому нужно найти ячейку
      * @param item заявка на которую нужно заменить
      * @return булевоое значение о том что все сработало
@@ -120,7 +119,4 @@ public class Tracker {
             return null;
         }
     }
-
-
-
 }
