@@ -53,7 +53,7 @@ public class Tracker {
     public boolean replace(String id, Item item) {
         boolean replace = false;
         int index = indexOf(id);
-        if (this.items[index].getId().equals(id)) {
+        if (index >= 0 && this.items[index].getId().equals(id)) {
             this.items[index] = item;
             item.setId(id);
             replace = true;
@@ -69,7 +69,7 @@ public class Tracker {
     public boolean delete(String id) {
         boolean result = false;
          int index = indexOf(id);
-        if (this.items[index].getId().equals(id)) {
+        if (index >= 0 && this.items[index].getId().equals(id)) {
             int start = index + 1;
             int distPos = index;
             int size = position - index;
@@ -113,8 +113,9 @@ public class Tracker {
      * @return Item найденый по id
      */
     public Item findById(String id) {
-        if (indexOf(id) >= 0) {
-            return items[indexOf(id)];
+        int index = indexOf(id);
+        if (index >= 0) {
+            return items[index];
         } else {
             return null;
         }

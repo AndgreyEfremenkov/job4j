@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
+
 public class StartUI {
 
     public void init(Input input, Tracker tracker) {
@@ -16,8 +18,9 @@ public class StartUI {
                 tracker.add(item);
             } else if (select == 1) {
                 System.out.println("=== All items ====");
-                for (int i = 0; i < tracker.findAll().length; i++) {
-                    System.out.println("Name: " + tracker.findAll()[i].getName() + " ID: " + tracker.findAll()[i].getId());
+                Item[] temp = Arrays.copyOf(tracker.findAll(), tracker.findAll().length);
+                for (int i = 0; i < temp.length; i++) {
+                    System.out.println("Name: " + temp[i].getName() + " ID: " + temp[i].getId());
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
@@ -36,13 +39,17 @@ public class StartUI {
                 System.out.println("=== Find item by Id ====");
                 System.out.print("Enter ID: ");
                 String id = input.askStr("");
-                System.out.println("Name: " + tracker.findById(id).getName() + " ID: " + tracker.findById(id).getId());
+                if (tracker.findById(id) != null) {
+                    Item temp = tracker.findById(id);
+                    System.out.println("Name: " + temp.getName() + " ID: " + temp.getId());
+                } else System.out.println("Invalid ID ");
             } else if (select == 5) {
                 System.out.println("=== Find items by name ====");
                 System.out.print("Enter name: ");
                 String name = input.askStr("");
-                for (int i = 0; i < tracker.findByName(name).length; i++) {
-                    System.out.println("Name: " + tracker.findByName(name)[i].getName() + " ID: " + tracker.findByName(name)[i].getId());
+                Item[] temp = Arrays.copyOf(tracker.findByName(name), tracker.findByName(name).length);
+                for (int i = 0; i < temp.length; i++) {
+                    System.out.println("Name: " + temp[i].getName() + " ID: " + temp[i].getId());
                 }
             } else if (select == 6) {
                 run = false;
