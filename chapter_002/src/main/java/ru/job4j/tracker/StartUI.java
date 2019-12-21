@@ -6,8 +6,7 @@ public class StartUI {
 
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
-        System.out.print("Enter name: ");
-        String name = input.askStr("");
+        String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
     }
@@ -22,25 +21,21 @@ public class StartUI {
 
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
-        System.out.print("Enter old ID: ");
-        String id = input.askStr("");
-        System.out.print("Enter new name: ");
-        String name = input.askStr("");
+        String id = input.askStr("Enter old ID: ");
+        String name = input.askStr("Enter new name: ");
         Item item = new Item(name);
         tracker.replace(id,item);
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ====");
-        System.out.print("Enter ID: ");
-        String id = input.askStr("");
+        String id = input.askStr("Enter ID: ");
         tracker.delete(id);
     }
 
     public static void findItemById(Input input, Tracker tracker) {
         System.out.println("=== Find item by Id ====");
-        System.out.print("Enter ID: ");
-        String id = input.askStr("");
+        String id = input.askStr("Enter ID: ");
         if (tracker.findById(id) != null) {
             Item temp = tracker.findById(id);
             System.out.println("Name: " + temp.getName() + " ID: " + temp.getId());
@@ -49,8 +44,7 @@ public class StartUI {
 
     public static void findItemsByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ====");
-        System.out.print("Enter name: ");
-        String name = input.askStr("");
+        String name = input.askStr("Enter name: ");
         Item[] temp = Arrays.copyOf(tracker.findByName(name), tracker.findByName(name).length);
         for (int i = 0; i < temp.length; i++) {
             System.out.println("Name: " + temp[i].getName() + " ID: " + temp[i].getId());
@@ -61,8 +55,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu();
-            System.out.print("Select:");
-            int select = Integer.valueOf(input.askStr(""));
+            int select = Integer.valueOf(input.askStr("Select:"));
             if (select == 0) {
                StartUI.createItem(input,tracker);
             } else if (select == 1) {
