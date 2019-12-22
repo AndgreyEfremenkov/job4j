@@ -23,13 +23,11 @@ public class Matches {
         int player = 1;
         int takeMatches;
 
-        System.out.println(" На столе лежат 11 спичек." +
-                "\n Два игрока по очереди берут от 1 до 3 спичек." +
-                "\n Выигрывает тот, кто забрал последние спички.\n");
+        System.out.println(" На столе лежат 11 спичек." + "\n Два игрока по очереди берут от 1 до 3 спичек." + "\n Выигрывает тот, кто забрал последние спички.\n");
         while (numOfMatches != 0) {
             System.out.println("Осталось: " + numOfMatches + " спичек. Игрок " + matches.player(player) + " возьмите спички!");
             takeMatches = input.nextInt();
-            if ( takeMatches <= numOfMatches && (takeMatches == 1 || takeMatches == 2 || takeMatches == 3) ) {
+            if (takeMatches <= numOfMatches && (takeMatches == 1 || takeMatches == 2 || takeMatches == 3)) {
                 numOfMatches -= takeMatches;
                 player++;
             } else {

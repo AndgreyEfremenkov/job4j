@@ -8,19 +8,19 @@ public class Bus implements Transport {
 
     @Override
     public void ride() {
-        this.fuel-=5;
+        this.fuel -= 5;
     }
 
     @Override
     public void passengers(int numPassengers) {
         this.passengers += numPassengers;
-        this.money +=(numPassengers*25);
+        this.money += (numPassengers * 25);
     }
 
     @Override
     public double fill(double fuel) {
-        this.fuel +=fuel;
-        return this.money-=(fuel*10);
+        this.fuel += fuel;
+        this.money -= (fuel * 10);
+        return this.money;
     }
-
 }

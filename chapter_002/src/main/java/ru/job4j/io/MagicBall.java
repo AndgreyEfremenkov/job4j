@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MagicBall {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String ask;
         System.out.println("Я великий Оракул. Что ты хочешь узнать?");

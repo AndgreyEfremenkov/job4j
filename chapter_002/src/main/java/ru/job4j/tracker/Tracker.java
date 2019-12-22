@@ -103,7 +103,7 @@ public class Tracker {
                 count++;
             }
         }
-        Item[] result = Arrays.copyOf(temp,count);
+        Item[] result = Arrays.copyOf(temp, count);
         return result;
     }
 

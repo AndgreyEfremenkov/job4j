@@ -24,7 +24,7 @@ public class StartUI {
         String id = input.askStr("Enter old ID: ");
         String name = input.askStr("Enter new name: ");
         Item item = new Item(name);
-        tracker.replace(id,item);
+        tracker.replace(id, item);
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
@@ -39,7 +39,9 @@ public class StartUI {
         if (tracker.findById(id) != null) {
             Item temp = tracker.findById(id);
             System.out.println("Name: " + temp.getName() + " ID: " + temp.getId());
-        } else System.out.println("Invalid ID ");
+        } else {
+            System.out.println("Invalid ID ");
+        }
     }
 
     public static void findItemsByName(Input input, Tracker tracker) {
@@ -57,17 +59,17 @@ public class StartUI {
             this.showMenu();
             int select = Integer.valueOf(input.askStr("Select:"));
             if (select == 0) {
-               StartUI.createItem(input,tracker);
+               StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                StartUI.showAllItems(input,tracker);
+                StartUI.showAllItems(input, tracker);
             } else if (select == 2) {
-                StartUI.editItem(input,tracker);
+                StartUI.editItem(input, tracker);
             } else if (select == 3) {
-                StartUI.deleteItem(input,tracker);
+                StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
-               StartUI.findItemById(input,tracker);
+               StartUI.findItemById(input, tracker);
             } else if (select == 5) {
-               StartUI.findItemsByName(input,tracker);
+               StartUI.findItemsByName(input, tracker);
             } else if (select == 6) {
                 run = false;
             } else {
