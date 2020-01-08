@@ -15,10 +15,10 @@ public class PaintTest {
         new Paint().draw(new Square());
         assertThat(new String(out.toByteArray()),
                 is(new StringBuilder()
-                    .append("*****")
-                    .append("*   *")
-                    .append("*   *")
-                    .append("*****")
+                    .append("*****\n")
+                    .append("*   *\n")
+                    .append("*   *\n")
+                    .append("*****\n")
                     .append(System.lineSeparator())
                     .toString()
                 )
