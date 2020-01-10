@@ -7,5 +7,6 @@ public class Paint {
 
     public static void main(String[] args) {
         new Paint().draw(new Square());
+        new Paint().draw(new Triangle());
     }
 }
