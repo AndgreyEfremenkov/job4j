@@ -8,7 +8,6 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select:");
-           // input.askStr(""); Не дает корректно выполнить тест
             UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
